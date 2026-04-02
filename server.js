@@ -20,6 +20,7 @@ app.use(express.json());
 // API Routes 
 app.use('/api/auth', authRouter);
 app.use('/api/rooms', roomRouter);
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
 const server = http.createServer(app);
 
